@@ -1,10 +1,5 @@
 'use strict';
 
-// Inspired by
-// https://github.com/visionmedia/page.js/blob/1034c8cbed600ea7da378a73716c885227c03270/index.js#L541-L601
-// https://github.com/yoshuawuyts/nanohref/blob/4efcc2c0becd2822a31c912364997cf03c66ab8d/index.js
-// https://github.com/whir-tools/hijack-links
-
 function getClosestLink(node, root) {
   function checkParent() {
     return getClosestLink(node.parentNode, root);
