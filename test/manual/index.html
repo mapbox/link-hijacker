@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>link-hijacker test</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://api.mapbox.com/mapbox-assembly/v0.13.0/assembly.min.css" rel="stylesheet">
+  <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.13.0/assembly.js"></script>
+  <script src="manual.js"></script>
+</head>
+<body class="p48">
+  <h1 class="txt-h1 txt-bold">link-hijacker test cases</h1>
+
+  <div class="mt12">
+    <button id="switch-options" class="btn">set options to false</button>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      just a link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="basic" href="/foo/bar" class="link">basic</a>
+      </div>
+      <div id="basic-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      link with nested spans
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="nested-spans" href="/foo/bar" class="link">
+          <span>
+            <span>
+              <span>
+                nested-spans
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div id="nested-spans-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      button nested inside a link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="nested-button" href="/foo/bar">
+          <span>
+            <span>
+              <button class="btn">
+                nested-button
+              </button>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div id="nested-button-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      image nested inside a link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="nested-image" href="/foo/bar">
+          <div>
+            <div>
+              <img alt="elephant" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Lightmatter_elephanttrunk.jpg" class="w360">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="nested-image-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      <span class="txt-code">download</span> link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="download" href="https://upload.wikimedia.org/wikipedia/commons/b/bf/Clown_chili_peppers.jpg" download class="link">download</a>
+      </div>
+      <div id="download-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      <span class="txt-code">rel="external"</span> link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="external" href="https://google.com" rel="external" class="link">external</a>
+      </div>
+      <div id="external-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      <span class="txt-code">target="_blank"</span> link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="target-blank" href="https://google.com" target="_blank" class="link">target-blank</a>
+      </div>
+      <div id="target-blank-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      <span class="txt-code">mailto:</span> link
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="mailto" href="mailto:fake@gmail.com" target="_blank" class="link">mailto</a>
+      </div>
+      <div id="mailto-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      link to other host
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="other-host" href="https://google.com" rel="external" class="link">other-host</a>
+      </div>
+      <div id="other-host-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      default prevented
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="default-prevented" href="https://google.com" rel="external" class="link">default-prevented</a>
+      </div>
+      <div id="default-prevented-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+</body>
+</html>

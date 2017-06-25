@@ -1,0 +1,45 @@
+{
+  "name": "@mapbox/link-hijacker",
+  "version": "0.1.0",
+  "description": "Hijack clicks on and within links, probably for client-side routing",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --single-quote --write '{,test/**/}*.js'",
+    "precommit": "lint-staged",
+    "lint": "eslint .",
+    "test-manual": "budo test/manual/test.js -l -d test/manual",
+    "test-jest": "jest",
+    "pretest": "npm run lint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/link-hijacker.git"
+  },
+  "keywords": [
+    "client-side-routing",
+    "routing",
+    "hijack",
+    "links"
+  ],
+  "author": "Mapbox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapbox/link-hijacker/issues"
+  },
+  "homepage": "https://github.com/mapbox/link-hijacker#readme",
+  "devDependencies": {
+    "budo": "^10.0.3",
+    "eslint": "^4.1.0",
+    "husky": "^0.14.1",
+    "jest": "^20.0.4",
+    "lint-staged": "^4.0.0",
+    "prettier": "^1.4.4"
+  },
+  "lint-staged": {
+    "{,test/**/}*.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
+}
