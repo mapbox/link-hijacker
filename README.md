@@ -1,5 +1,7 @@
 # @mapbox/link-hijacker
 
+[![Build Status](https://travis-ci.org/mapbox/link-hijacker.svg?branch=master)](https://travis-ci.org/mapbox/link-hijacker)
+
 Hijack clicks on and within links, probably for client-side routing.
 
 ![Pirates hijacking a ship](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Painting_of_a_pirate_ship_%28after_1852%29%2C_after_Ambroise_Louis_Garneray.jpg/640px-Painting_of_a_pirate_ship_%28after_1852%29%2C_after_Ambroise_Louis_Garneray.jpg)
