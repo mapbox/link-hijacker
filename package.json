@@ -38,6 +38,7 @@
   },
   "lint-staged": {
     "{,test/**/}*.js": [
+      "eslint",
       "prettier --single-quote --write",
       "git add"
     ]
