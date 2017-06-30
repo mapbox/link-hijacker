@@ -14,6 +14,13 @@ function setDefault(x, d) {
   return x === undefined ? d : x;
 }
 
+function sharedOrigin(location, href) {
+  if (!href) return false;
+  var origin = location.protocol + '//' + location.hostname;
+  if (location.port) origin += ':' + location.port;
+  return href.indexOf(origin) === 0;
+}
+
 function hijack(options, callback) {
   if (typeof window === 'undefined') return;
   if (typeof options === 'function') {
@@ -45,7 +52,7 @@ function hijack(options, callback) {
     if (skipExternal && link.getAttribute('rel') === 'external') return;
     if (skipTargetBlank && link.getAttribute('target') === '_blank') return;
     if (skipMailTo && /mailto:/.test(link.getAttribute('href'))) return;
-    if (skipOtherHost && window.location.host !== link.host) return;
+    if (skipOtherHost && !sharedOrigin(window.location, link.href)) return;
 
     e.preventDefault();
     callback(link, e);
