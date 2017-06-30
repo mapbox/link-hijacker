@@ -342,4 +342,25 @@ describe('hijack', () => {
     handler(mockEvent);
     expect(callbackCalled).toBe(false);
   });
+
+  test('options.skipFilter', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack(
+      {
+        root,
+        skipFilter: link => link.hasAttribute('data-no-hijack')
+      },
+      () => {
+        callbackCalled = true;
+      }
+    );
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '/path/to/place');
+    link.setAttribute('data-no-hijack', '');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(false);
+    link.removeAttribute('data-no-hijack');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+  });
 });

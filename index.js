@@ -40,6 +40,7 @@ function hijack(options, callback) {
     var link = getClosestLink(e.target, root);
     if (!link) return;
 
+    if (options.skipFilter && options.skipFilter(link)) return;
     if (skipDownload && link.hasAttribute('download')) return;
     if (skipExternal && link.getAttribute('rel') === 'external') return;
     if (skipTargetBlank && link.getAttribute('target') === '_blank') return;

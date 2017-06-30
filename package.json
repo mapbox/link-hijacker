@@ -7,7 +7,8 @@
     "format": "prettier --single-quote --write '{,test/**/}*.js'",
     "precommit": "lint-staged",
     "lint": "eslint .",
-    "test-manual": "budo test/manual/test.js -l -d test/manual",
+    "test-manual": "budo test/manual/manual.js -l -d test/manual",
+    "start": "npm run test-manual",
     "test-jest": "jest",
     "pretest": "npm run lint",
     "test": "jest"
