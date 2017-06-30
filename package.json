@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/link-hijacker",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Hijack clicks on and within links, probably for client-side routing",
   "main": "index.js",
   "scripts": {
