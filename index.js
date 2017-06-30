@@ -15,7 +15,7 @@ function setDefault(x, d) {
 }
 
 function sharedOrigin(location, href) {
-  if (!href) return false;
+  if (!/^http/.test(href)) return true;
   var origin = location.protocol + '//' + location.hostname;
   if (location.port) origin += ':' + location.port;
   return href.indexOf(origin) === 0;

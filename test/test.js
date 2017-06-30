@@ -14,6 +14,7 @@ describe('hijack', () => {
       removeEventListener: jest.fn()
     };
     link = global.document.createElement('a');
+    link.href = '/foo/bar';
     global.document.body.appendChild(link);
     mockEvent = {
       preventDefault: jest.fn(),
