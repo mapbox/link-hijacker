@@ -1,6 +1,6 @@
 'use strict';
 
-var linkHijacker = require('..');
+var linkHijacker = require('../..');
 
 document
   .getElementById('default-prevented')
@@ -29,16 +29,19 @@ switchButton.addEventListener('click', function() {
         skipTargetBlank: false,
         skipExternal: false,
         skipMailTo: false,
-        skipOtherHost: false
+        skipOtherHost: false,
+        skipFilter: function(link) {
+          return link.hasAttribute('data-no-hijack');
+        }
       },
       logHijacking
     );
     usingDefaults = false;
-    switchButton.innerText = 'set options to true (defaults)';
+    switchButton.innerText = 'use defaults';
   } else {
     stop();
     stop = linkHijacker.hijack(logHijacking);
     usingDefaults = true;
-    switchButton.innerText = 'set options to false';
+    switchButton.innerText = 'set options';
   }
 });
