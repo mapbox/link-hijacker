@@ -29,7 +29,7 @@ switchButton.addEventListener('click', function() {
         skipTargetBlank: false,
         skipExternal: false,
         skipMailTo: false,
-        skipOtherHost: false,
+        skipOtherOrigin: false,
         skipFilter: function(link) {
           return link.hasAttribute('data-no-hijack');
         }

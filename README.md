@@ -71,8 +71,8 @@ Whenever a link is clicked, the `callback` will be invoked with two arguments:
   By default, links with the attribute `rel="external"` are not hijacked. You can change this.
 - **skipMailTo** `?boolean` - Default: `false`.
   By default, links whose hrefs start with `mailto:` are not hijacked. You can change this.
-- **skipOtherHost** `?boolean` - Default: `false`.
-  By default, links pointing to other hosts are not hijacked. You can change this.
+- **skipOtherOrigin** `?boolean` - Default: `false`.
+  By default, links pointing to other origins (protocol + domain) are not hijacked. You can change this.
 - **skipFilter** `?Function` - A filter function that receives the clicked link element and returns a truthy or falsey value indicating whether the link should be hijacked or not.
   If the function returns a truthy value, the link will be left alone.
   If it returns a falsey value, the link will be hijacked.

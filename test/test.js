@@ -14,7 +14,7 @@ describe('hijack', () => {
       removeEventListener: jest.fn()
     };
     link = global.document.createElement('a');
-    link.href = '/foo/bar';
+    link.href = 'about:/foo/bar';
     global.document.body.appendChild(link);
     mockEvent = {
       preventDefault: jest.fn(),
@@ -356,7 +356,7 @@ describe('hijack', () => {
       }
     );
     const handler = root.addEventListener.mock.calls[0][1];
-    link.setAttribute('href', '/path/to/place');
+    link.setAttribute('href', 'about:/path/to/place');
     link.setAttribute('data-no-hijack', '');
     handler(mockEvent);
     expect(callbackCalled).toBe(false);
