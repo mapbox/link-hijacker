@@ -2,7 +2,7 @@
 
 function getClosestLink(node, root) {
   if (!node || node === root) return;
-  if ('a' !== node.nodeName.toLowerCase() || node.href === undefined) {
+  if ('a' !== node.nodeName.toLowerCase() || !node.href) {
     return getClosestLink(node.parentNode, root);
   }
   return node;

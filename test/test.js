@@ -364,4 +364,15 @@ describe('hijack', () => {
     handler(mockEvent);
     expect(callbackCalled).toBe(true);
   });
+
+  test('skips anchor without href', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.removeAttribute('href');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(false);
+  });
 });
