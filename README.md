@@ -19,9 +19,9 @@ link-hijacker provides the means to do this by hijacking all clicks on and withi
 - Listens for clicks.
 - Determines which clicks are on or within `<a>` elements with `href` attributes.
 - Determines whether those links should be hijacked.
-- If a link should be hijacked, prevents default behavior and calls you callback.
+- If a link should be hijacked, prevents default behavior and calls your callback.
 
-*This pattern has been implemented before*, because it's clearly useful.
+This pattern has been implemented before, because it's clearly useful.
 But I couldn't find a full-featured, well-tested, and actively maintained implementation that was not part of a larger library.
 
 ## Typical example
