@@ -47,7 +47,9 @@ After you've hijacked links, you can use `<a>` elements indiscriminately.
 
 ## API
 
-### hijack([options], callback)
+### hijack
+
+`linkHijacker.hijack([options], callback)`
 
 Returns a function that can be used to remove event listeners, unhijacking links.
 Calls the `callback` whenever a link is hijacked.
