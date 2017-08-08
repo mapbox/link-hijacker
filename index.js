@@ -47,6 +47,11 @@ function hijack(options, callback) {
     if (skipExternal && link.getAttribute('rel') === 'external') return;
     if (skipTargetBlank && link.getAttribute('target') === '_blank') return;
     if (skipMailTo && /mailto:/.test(link.getAttribute('href'))) return;
+    // IE doesn't populate all link properties when setting href with a
+    // relative URL. However, href will return an absolute URL which then can
+    // be used on itself to populate these additional fields.
+    // https://stackoverflow.com/a/13405933/2284669
+    if (!link.host) link.href = link.href;
     if (
       skipOtherOrigin &&
       /:\/\//.test(link.href) &&
