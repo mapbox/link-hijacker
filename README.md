@@ -64,45 +64,52 @@ Links will be hijacked within this element.
 
 ##### skipModifierKeys
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, clicks paired with modifiers keys (`ctrlKey`, `altKey`, `metaKey`, `shiftKey`) are not hijacked.
-If this option is `true`, these clicks will still be hijacked.
+If this option is `false`, these clicks will still be hijacked.
 
 ##### skipDownload
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, links with the `download` attribute are not hijacked.
-If this option is `true`, these links will still be hijacked.
+If this option is `false`, these links will still be hijacked.
 
 ##### skipTargetBlank
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, links with the attribute `target="_blank"` are not hijacked.
-If this option is `true`, these links will still be hijacked.
+If this option is `false`, these links will still be hijacked.
 
 ##### skipExternal
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, links with the attribute `rel="external"` are not hijacked.
-If this option is `true`, these links will still be hijacked.
+If this option is `false`, these links will still be hijacked.
 
 ##### skipMailTo
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, links whose hrefs start with `mailto:` are not hijacked.
-If this option is `true`, these links will still be hijacked.
+If this option is `false`, these links will still be hijacked.
 
 ##### skipOtherOrigin
 
-Type: `boolean`. Default: `false`.
+Type: `boolean`. Default: `true`.
 
 By default, links pointing to other origins (protocol + domain) are not hijacked.
-If this option is `true`, these links will still be hijacked.
+If this option is `false`, these links will still be hijacked.
+
+##### skipFragment
+
+Type: `boolean`. Default: `true`.
+
+By default, links starting with fragments (e.g. `href="#foo"`) are not hijacked.
+If this option is `false`, these links will still be hijacked.
 
 ##### skipFilter
 

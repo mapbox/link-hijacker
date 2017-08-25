@@ -30,6 +30,7 @@ switchButton.addEventListener('click', function() {
         skipExternal: false,
         skipMailTo: false,
         skipOtherOrigin: false,
+        skipFragment: false,
         skipFilter: function(link) {
           return link.hasAttribute('data-no-hijack');
         }

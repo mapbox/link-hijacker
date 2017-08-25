@@ -192,6 +192,30 @@
     </div>
   </div>
 
+  <div id="fraggle" class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      anchor with fragment href
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="anchor-with-fragment" class="link" href="#fraggle">anchor-with-fragment</a>
+      </div>
+      <div id="anchor-with-fragment-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
+  <div id="fraggle" class="mt12 px24 py12 border border--gray-light round">
+    <div class="txt-s color-gray mb6">
+      anchor with href URL containing (but not starting with) fragment
+    </div>
+    <div class="flex-parent flex-parent--space-between-main">
+      <div class="flex-child">
+        <a id="anchor-with-noninitial-fragment" class="link" href="/foo/#fraggle">anchor-with-noninitial-fragment</a>
+      </div>
+      <div id="anchor-with-noninitial-fragment-count" class="flex-child txt-bold">0</div>
+    </div>
+  </div>
+
   <script src="manual.js"></script>
 </body>
 </html>
