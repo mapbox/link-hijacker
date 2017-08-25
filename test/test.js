@@ -375,4 +375,48 @@ describe('hijack', () => {
     handler(mockEvent);
     expect(callbackCalled).toBe(false);
   });
+
+  test('skips fragments', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '#foo');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(false);
+  });
+
+  test('does not skip URLs ending with fragments', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '/foo/bar#baz');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+  });
+
+  test('does not skip URLs ending with slash + fragments', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '/foo/bar/#baz');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+  });
+
+  test('options.skipFragment', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root, skipFragment: false }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '#foo');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+  });
 });

@@ -104,6 +104,13 @@ Type: `boolean`. Default: `false`.
 By default, links pointing to other origins (protocol + domain) are not hijacked.
 If this option is `true`, these links will still be hijacked.
 
+##### skipFragment
+
+Type: `boolean`. Default: `false`.
+
+By default, links starting with fragments (e.g. `href="#foo"`) are not hijacked.
+If this option is `true`, these links will still be hijacked.
+
 ##### skipFilter
 
 Type: `Function`.

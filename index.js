@@ -27,6 +27,7 @@ function hijack(options, callback) {
   var skipExternal = setDefault(options.skipExternal, true);
   var skipMailTo = setDefault(options.skipMailTo, true);
   var skipOtherOrigin = setDefault(options.skipOtherOrigin, true);
+  var skipFragment = setDefault(options.skipFragment, true);
 
   function onClick(e) {
     if (e.defaultPrevented) return;
@@ -43,6 +44,7 @@ function hijack(options, callback) {
     if (!link) return;
 
     if (options.skipFilter && options.skipFilter(link)) return;
+    if (skipFragment && /^#/.test(link.getAttribute('href'))) return;
     if (skipDownload && link.hasAttribute('download')) return;
     if (skipExternal && link.getAttribute('rel') === 'external') return;
     if (skipTargetBlank && link.getAttribute('target') === '_blank') return;
