@@ -1,6 +1,6 @@
 # Changelog
 
-## Head
+## 0.4.0
 
 - **[Breaking change]**: Add `skipFragment` option, defaulting to `true`.
   So links to fragments (e.g. `href="#foo"`) are no longer hijacked by default.
