@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+- Release 1.0.0, because it's time.
+
 ## 0.4.0
 
 - **[Breaking change]**: Add `skipFragment` option, defaulting to `true`.
