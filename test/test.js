@@ -419,4 +419,28 @@ describe('hijack', () => {
     handler(mockEvent);
     expect(callbackCalled).toBe(true);
   });
+
+  test('options.preventDefault true (default)', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '/foo');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
+  });
+
+  test('options.preventDefault false', () => {
+    let callbackCalled = false;
+    remove = linkHijacker.hijack({ root, preventDefault: false }, () => {
+      callbackCalled = true;
+    });
+    const handler = root.addEventListener.mock.calls[0][1];
+    link.setAttribute('href', '/foo');
+    handler(mockEvent);
+    expect(callbackCalled).toBe(true);
+    expect(mockEvent.preventDefault).not.toHaveBeenCalled();
+  });
 });

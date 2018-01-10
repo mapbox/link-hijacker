@@ -120,6 +120,14 @@ A filter function that receives the clicked link element and returns a truthy or
 If it returns a falsey value, the link will be hijacked.
 If the function returns a truthy value, the link will not be hijacked.
 
+##### preventDefault
+
+Type: `boolean`. Default: `true`.
+
+By default, `event.preventDefault()` will be called on any click events that are hijacked (are *not* skipped).
+If this option is `false`, `event.preventDefault()` will *not* be called.
+You could let the event continue as normal, or prevent default behavior yourself.
+
 #### callback
 
 Type: `Function`.

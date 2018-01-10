@@ -1,5 +1,9 @@
 # Changelog
 
+## Head
+
+- Add `preventDefault` option.
+
 ## 1.0.0
 
 - Release 1.0.0, because it's time.

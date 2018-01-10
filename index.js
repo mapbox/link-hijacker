@@ -28,6 +28,7 @@ function hijack(options, callback) {
   var skipMailTo = setDefault(options.skipMailTo, true);
   var skipOtherOrigin = setDefault(options.skipOtherOrigin, true);
   var skipFragment = setDefault(options.skipFragment, true);
+  var preventDefault = setDefault(options.preventDefault, true);
 
   function onClick(e) {
     if (e.defaultPrevented) return;
@@ -62,7 +63,9 @@ function hijack(options, callback) {
       return;
     }
 
-    e.preventDefault();
+    if (preventDefault) {
+      e.preventDefault();
+    }
     callback(link, e);
   }
 
