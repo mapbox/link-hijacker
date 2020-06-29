@@ -54,7 +54,7 @@ function hijack(options, callback) {
     // relative URL. However, href will return an absolute URL which then can
     // be used on itself to populate these additional fields.
     // https://stackoverflow.com/a/13405933/2284669
-    if (!link.host) link.href = link.href;
+    if (!link.host) link.href = link.href; // eslint-disable-line
     if (
       skipOtherOrigin &&
       /:\/\//.test(link.href) &&

@@ -4,7 +4,7 @@ var linkHijacker = require('../..');
 
 document
   .getElementById('default-prevented')
-  .addEventListener('click', function(e) {
+  .addEventListener('click', function (e) {
     e.preventDefault();
   });
 
@@ -19,7 +19,7 @@ var stop = linkHijacker.hijack(logHijacking);
 
 var usingDefaults = true;
 var switchButton = document.getElementById('switch-options');
-switchButton.addEventListener('click', function() {
+switchButton.addEventListener('click', function () {
   if (usingDefaults === true) {
     stop();
     stop = linkHijacker.hijack(
@@ -31,7 +31,7 @@ switchButton.addEventListener('click', function() {
         skipMailTo: false,
         skipOtherOrigin: false,
         skipFragment: false,
-        skipFilter: function(link) {
+        skipFilter: function (link) {
           return link.hasAttribute('data-no-hijack');
         }
       },

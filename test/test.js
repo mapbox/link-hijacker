@@ -349,7 +349,7 @@ describe('hijack', () => {
     remove = linkHijacker.hijack(
       {
         root,
-        skipFilter: link => link.hasAttribute('data-no-hijack')
+        skipFilter: (link) => link.hasAttribute('data-no-hijack')
       },
       () => {
         callbackCalled = true;
