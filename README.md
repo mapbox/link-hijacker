@@ -1,6 +1,6 @@
 # @mapbox/link-hijacker
 
-[![Build Status](https://travis-ci.org/mapbox/link-hijacker.svg?branch=main)](https://travis-ci.org/mapbox/link-hijacker)
+[![Build Status](https://travis-ci.com/mapbox/link-hijacker.svg?branch=main)](https://travis-ci.com/mapbox/link-hijacker)
 
 Hijack clicks on and within links, probably for client-side routing.
 
